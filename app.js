@@ -27,6 +27,7 @@ const client = new line.Client(config);
 
 // รับพารามิเตอร์ 3 ตัว /webhook ที่อยู่ส่วนสุดท้ายของ url
 app.post('/webhook', line.middleware(config), (req, res) => {
+    console.log(req.body);
     Promise
         .all(req.body.events.map(handleEvent))
         .then((result) => res.json(result));
