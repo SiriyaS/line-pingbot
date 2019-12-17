@@ -27,8 +27,8 @@ app.post('/webhook', line.middleware(config), (req, res) => {
 });
 
 app.get('/ping', function (req,res){
-    console.log('pingping-pong');
-    res.send('pingping-pong');
+    console.log('ping-pong1');
+    res.send('ping-pong1');
 });
 
 function handleEvent(event) {
