@@ -15,7 +15,7 @@
 - Implement code
  1. clone git
 ```
-git clone 
+git clone https://github.com/SiriyaS/line-pingbot.git
 ```
   2. Install npm
 ```
