@@ -15,7 +15,7 @@
 - Implement code
  1. clone git
 ```
-git clone https://github.com/SiriyaS/Pingbot-demo.git
+git clone 
 ```
   2. Install npm
 ```
