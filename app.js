@@ -52,11 +52,11 @@ function handleMessageEvent(event) {
     if(eventText === 'recommend'){
         var msg = {
             type: 'text',
-            text: 'https://travel.trueid.net/detail/64Y059oWaez7'
+            text: 'https://www.ryoiireview.com/article/dessert-siam-thailand/#'
         };
     }
     else if (eventText === 'menu1') {
-        image = "https://ed.files-media.com/ud/review/1/154/461876/PPJ02889.jpg"
+        image = "https://danielfooddiary.com/wp-content/uploads/2016/09/maygori3.jpg"
         msg = {
             'type': 'image',
             'originalContentUrl': image,
@@ -65,7 +65,7 @@ function handleMessageEvent(event) {
         }
     }
     else if(eventText === 'menu2'){
-        image = "https://f.ptcdn.info/879/051/000/ormrfseeexhs84plE8Q-o.jpg"
+        image = "https://coconuts.co/wp-content/uploads/2016/11/fudge_pancake_with_syrup.jpg"
         msg = {
             'type': 'image',
             'originalContentUrl': image,
@@ -74,7 +74,7 @@ function handleMessageEvent(event) {
         }
     }
     else if(eventText === 'menu3'){
-        image = "https://f.ptcdn.info/945/058/000/pctho1c9u7D3gnAI570-o.jpg"
+        image = "https://i.pinimg.com/originals/4f/c9/40/4fc9403eba50c92c849d433b3297377f.jpg"
         msg = {
             'type': 'image',
             'originalContentUrl': image,
