@@ -50,7 +50,7 @@ function handleMessageEvent(event) {
 
     var eventText = event.message.text.toLowerCase();
 
-    if(eventText === 'quick reply'){
+    if(eventText === 'quickreply'){
         quickReply;
     }
     else if(eventText === 'recommend'){
