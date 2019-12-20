@@ -6,6 +6,7 @@ const secretToken =  "cd1d98e643ce2194b31acbfecb286213"
 // Import Library
 const express = require('express');
 const line = require('@line/bot-sdk');
+const quickReply = require('./quickreply');
 
 require('dotenv').config();
 
@@ -49,7 +50,10 @@ function handleMessageEvent(event) {
 
     var eventText = event.message.text.toLowerCase();
 
-    if(eventText === 'recommend'){
+    if(eventText === 'quick reply'){
+        quickReply.get();
+    }
+    else if(eventText === 'recommend'){
         var msg = {
             type: 'text',
             text: 'https://www.ryoiireview.com/article/dessert-siam-thailand/#'
