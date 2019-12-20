@@ -51,7 +51,7 @@ function handleMessageEvent(event) {
     var eventText = event.message.text.toLowerCase();
 
     if(eventText === 'quick reply'){
-        quickReply.get();
+        quickReply;
     }
     else if(eventText === 'recommend'){
         var msg = {
