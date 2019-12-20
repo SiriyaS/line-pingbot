@@ -50,7 +50,7 @@ function handleMessageEvent(event) {
 
     var eventText = event.message.text.toLowerCase();
 
-    if(eventText === 'quickreply'){
+    if(eventText === 'quick reply'){
         var msg = {
             "type": "text",
             "text": "Hello Quick Reply!",
