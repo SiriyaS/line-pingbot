@@ -51,7 +51,7 @@ function handleMessageEvent(event) {
     var eventText = event.message.text.toLowerCase();
 
     var splited = eventText.split(" ");
-    console.log(eventText);
+    console.log(splited);
     if(splited[0] === 'nbot'){
 
     }
