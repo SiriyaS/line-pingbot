@@ -50,7 +50,8 @@ function handleMessageEvent(event) {
 
     var eventText = event.message.text.toLowerCase();
 
-    var splited = eventText.split(" ");
+    var trimed = eventText.trim();
+    var splited = trimed.split(" ");
     // console.log(splited);
     if(splited[0] === 'nbot'){
         if(splited[1] === 'hi'){
@@ -61,6 +62,13 @@ function handleMessageEvent(event) {
         }
     }
     else{
+        // if(eventText === 'camera'){
+        //     var msg = {
+        //         "type": "text",
+        //         "text": "Camera Quick Reply!",
+        //         "quickReply": ""
+        //     }
+        // }
         if(eventText === 'quick reply'){
             var msg = {
                 "type": "text",
