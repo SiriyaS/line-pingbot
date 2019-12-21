@@ -50,9 +50,9 @@ function handleMessageEvent(event) {
 
     var eventText = event.message.text.toLowerCase();
 
-    var nbot = eventText.slice(0,4);
+    var splited = eventText.split(" ");
     console.log(eventText);
-    if(nbot === 'nbot'){
+    if(splited[0] === 'nbot'){
 
     }
     else{
