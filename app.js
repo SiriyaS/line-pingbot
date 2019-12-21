@@ -70,9 +70,10 @@ function handleMessageEvent(event) {
         }
         else if(splited[1].includes('event:')){
             var eventName = splited[1].slice(6);
+            var select = `Please select date for ${eventName}`;  // `gfd ${gmh}gfd`
             var msg = {
                 type: 'text',
-                text: 'Please select date',
+                text: select,
                 quickReply: {
                     items: [
                         {
