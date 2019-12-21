@@ -52,7 +52,7 @@ function handleMessageEvent(event) {
 
     var trimed = eventText.trim();
     var splited = trimed.split(" ");
-    // console.log(splited);
+    console.log(splited);
     if(splited[0] === 'nbot'){
         if(splited[1] === 'hi'){
             var msg = {
