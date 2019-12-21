@@ -45,7 +45,7 @@ function handleEvent(event) {
 function handleMessageEvent(event) {
     var msg = {
         type: 'text',
-        text: 'สวัสดีครัช Interact with nbot type "nbot hi" for adding event type "nbot event:<eventName>"'
+        text: 'Interact with nbot type "nbot hi" for adding event type "nbot event:<eventName>"'
     };
 
     var eventText = event.message.text.toLowerCase();
