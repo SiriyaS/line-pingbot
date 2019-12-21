@@ -68,6 +68,30 @@ function handleMessageEvent(event) {
                 };
             }
         }
+        else if(splited[1].includes('event:')){
+            var eventName = splited[1].slice(6);
+            var msg = {
+                type: 'text',
+                text: 'Please select date',
+                quickReply: {
+                    items: [
+                        {
+                        "type": "action",
+                        "imageUrl": "https://icla.org/wp-content/uploads/2018/02/blue-calendar-icon.png",
+                        "action": {
+                            "type": "datetimepicker",
+                            "label": "Datetime Picker",
+                            "data": "storeId=12345",
+                            "mode": "datetime",
+                            "initial": "2018-08-10t00:00",
+                            "max": "2018-12-31t23:59",
+                            "min": "2018-08-01t00:00"
+                        }
+                        }
+                    ]
+                }
+            };
+        }
     }
     else{
         // if(eventText === 'camera'){
