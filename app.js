@@ -60,6 +60,14 @@ function handleMessageEvent(event) {
                 text: 'Hi !'
             };
         }
+        else if(splited[1] === ''){
+            if(splited[2] === 'hi'){
+                var msg = {
+                    type: 'text',
+                    text: 'Hi !'
+                };
+            }
+        }
     }
     else{
         // if(eventText === 'camera'){
