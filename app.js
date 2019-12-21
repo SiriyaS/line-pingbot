@@ -70,7 +70,7 @@ function handleMessageEvent(event) {
         }
         else if(splited[1].includes('event:')){
             var eventName = splited[1].slice(6);
-            var select = `Please select date for ${eventName}`;  // `gfd ${gmh}gfd`
+            var select = `Please select date and time for ${eventName}`;  // `gfd ${gmh}gfd`
             var msg = {
                 type: 'text',
                 text: select,
@@ -84,9 +84,9 @@ function handleMessageEvent(event) {
                             "label": "Datetime Picker",
                             "data": "storeId=12345",
                             "mode": "datetime",
-                            "initial": "2018-08-10t00:00",
-                            "max": "2018-12-31t23:59",
-                            "min": "2018-08-01t00:00"
+                            "initial": "2019-12-21t00:00",
+                            "max": "2020-04-30t23:59",
+                            "min": "2019-12-20t00:00"
                         }
                         }
                     ]
@@ -95,13 +95,6 @@ function handleMessageEvent(event) {
         }
     }
     else{
-        // if(eventText === 'camera'){
-        //     var msg = {
-        //         "type": "text",
-        //         "text": "Camera Quick Reply!",
-        //         "quickReply": ""
-        //     }
-        // }
         if(eventText === 'quick reply'){
             var msg = {
                 "type": "text",
