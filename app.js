@@ -51,9 +51,14 @@ function handleMessageEvent(event) {
     var eventText = event.message.text.toLowerCase();
 
     var splited = eventText.split(" ");
-    console.log(splited);
+    // console.log(splited);
     if(splited[0] === 'nbot'){
-
+        if(splited[1] === 'hi'){
+            var msg = {
+                type: 'text',
+                text: 'Hi !'
+            };
+        }
     }
     else{
         if(eventText === 'quick reply'){
