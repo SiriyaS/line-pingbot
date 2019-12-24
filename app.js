@@ -47,13 +47,18 @@ function handleMessageEvent(event) {
     var eventText = event.message.text.toLowerCase();
 
     var trimed = eventText.trim();
-    var splited = trimed.split(" ");
-    console.log(splited);
-    if(splited[0] === 'nbot'){
+
+    if(trimed === 'nbot'){
         var msg = {
             type: 'text',
             text: 'Interact with nbot type "nbot hi" for adding event type "nbot event:<eventName>"'
         };
+    }
+    
+    var splited = trimed.split(" ");
+    console.log(splited);
+    if(splited[0] === 'nbot'){
+        
         if(splited[1] === 'hi'){
             var msg = {
                 type: 'text',
