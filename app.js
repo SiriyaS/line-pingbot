@@ -43,17 +43,17 @@ function handleEvent(event) {
 }
 
 function handleMessageEvent(event) {
-    var msg = {
-        type: 'text',
-        text: 'Interact with nbot type "nbot hi" for adding event type "nbot event:<eventName>"'
-    };
-
+    
     var eventText = event.message.text.toLowerCase();
 
     var trimed = eventText.trim();
     var splited = trimed.split(" ");
     console.log(splited);
     if(splited[0] === 'nbot'){
+        var msg = {
+            type: 'text',
+            text: 'Interact with nbot type "nbot hi" for adding event type "nbot event:<eventName>"'
+        };
         if(splited[1] === 'hi'){
             var msg = {
                 type: 'text',
@@ -94,104 +94,104 @@ function handleMessageEvent(event) {
             };
         }
     }
-    else{
-        if(eventText === 'quick reply'){
-            var msg = {
-                "type": "text",
-                "text": "Hello Quick Reply!",
-                "quickReply": {
-                "items": [
-                    {
-                    "type": "action",
-                    "action": {
-                        "type": "cameraRoll",
-                        "label": "Camera Roll"
-                    }
-                    },
-                    {
-                    "type": "action",
-                    "action": {
-                        "type": "camera",
-                        "label": "Camera"
-                    }
-                    },
-                    {
-                    "type": "action",
-                    "action": {
-                        "type": "location",
-                        "label": "Location"
-                    }
-                    },
-                    {
-                    "type": "action",
-                    "imageUrl": "https://cdn1.iconfinder.com/data/icons/mix-color-3/502/Untitled-1-512.png",
-                    "action": {
-                        "type": "message",
-                        "label": "Message",
-                        "text": "Hello World!"
-                    }
-                    },
-                    {
-                    "type": "action",
-                    "action": {
-                        "type": "postback",
-                        "label": "Postback",
-                        "data": "action=buy&itemid=123",
-                        "displayText": "Buy"
-                    }
-                    },
-                    {
-                    "type": "action",
-                    "imageUrl": "https://icla.org/wp-content/uploads/2018/02/blue-calendar-icon.png",
-                    "action": {
-                        "type": "datetimepicker",
-                        "label": "Datetime Picker",
-                        "data": "storeId=12345",
-                        "mode": "datetime",
-                        "initial": "2018-08-10t00:00",
-                        "max": "2018-12-31t23:59",
-                        "min": "2018-08-01t00:00"
-                    }
-                    }
-                ]
-                }
-            };
+    // else{
+    //     if(eventText === 'quick reply'){
+    //         var msg = {
+    //             "type": "text",
+    //             "text": "Hello Quick Reply!",
+    //             "quickReply": {
+    //             "items": [
+    //                 {
+    //                 "type": "action",
+    //                 "action": {
+    //                     "type": "cameraRoll",
+    //                     "label": "Camera Roll"
+    //                 }
+    //                 },
+    //                 {
+    //                 "type": "action",
+    //                 "action": {
+    //                     "type": "camera",
+    //                     "label": "Camera"
+    //                 }
+    //                 },
+    //                 {
+    //                 "type": "action",
+    //                 "action": {
+    //                     "type": "location",
+    //                     "label": "Location"
+    //                 }
+    //                 },
+    //                 {
+    //                 "type": "action",
+    //                 "imageUrl": "https://cdn1.iconfinder.com/data/icons/mix-color-3/502/Untitled-1-512.png",
+    //                 "action": {
+    //                     "type": "message",
+    //                     "label": "Message",
+    //                     "text": "Hello World!"
+    //                 }
+    //                 },
+    //                 {
+    //                 "type": "action",
+    //                 "action": {
+    //                     "type": "postback",
+    //                     "label": "Postback",
+    //                     "data": "action=buy&itemid=123",
+    //                     "displayText": "Buy"
+    //                 }
+    //                 },
+    //                 {
+    //                 "type": "action",
+    //                 "imageUrl": "https://icla.org/wp-content/uploads/2018/02/blue-calendar-icon.png",
+    //                 "action": {
+    //                     "type": "datetimepicker",
+    //                     "label": "Datetime Picker",
+    //                     "data": "storeId=12345",
+    //                     "mode": "datetime",
+    //                     "initial": "2018-08-10t00:00",
+    //                     "max": "2018-12-31t23:59",
+    //                     "min": "2018-08-01t00:00"
+    //                 }
+    //                 }
+    //             ]
+    //             }
+    //         };
             
-        }
-        else if(eventText === 'recommend'){
-            var msg = {
-                type: 'text',
-                text: 'https://www.ryoiireview.com/article/dessert-siam-thailand/#'
-            };
-        }
-        else if (eventText === 'menu1') {
-            image = "https://danielfooddiary.com/wp-content/uploads/2016/09/maygori3.jpg"
-            msg = {
-                'type': 'image',
-                'originalContentUrl': image,
-                'previewImageUrl': image,
+    //     }
+    //     else if(eventText === 'recommend'){
+    //         var msg = {
+    //             type: 'text',
+    //             text: 'https://www.ryoiireview.com/article/dessert-siam-thailand/#'
+    //         };
+    //     }
+    //     else if (eventText === 'menu1') {
+    //         image = "https://danielfooddiary.com/wp-content/uploads/2016/09/maygori3.jpg"
+    //         msg = {
+    //             'type': 'image',
+    //             'originalContentUrl': image,
+    //             'previewImageUrl': image,
                 
-            }
-        }
-        else if(eventText === 'menu2'){
-            image = "https://coconuts.co/wp-content/uploads/2016/11/fudge_pancake_with_syrup.jpg"
-            msg = {
-                'type': 'image',
-                'originalContentUrl': image,
-                'previewImageUrl': image,
+    //         }
+    //     }
+    //     else if(eventText === 'menu2'){
+    //         image = "https://coconuts.co/wp-content/uploads/2016/11/fudge_pancake_with_syrup.jpg"
+    //         msg = {
+    //             'type': 'image',
+    //             'originalContentUrl': image,
+    //             'previewImageUrl': image,
                 
-            }
-        }
-        else if(eventText === 'menu3'){
-            image = "https://i.pinimg.com/originals/4f/c9/40/4fc9403eba50c92c849d433b3297377f.jpg"
-            msg = {
-                'type': 'image',
-                'originalContentUrl': image,
-                'previewImageUrl': image,
+    //         }
+    //     }
+    //     else if(eventText === 'menu3'){
+    //         image = "https://i.pinimg.com/originals/4f/c9/40/4fc9403eba50c92c849d433b3297377f.jpg"
+    //         msg = {
+    //             'type': 'image',
+    //             'originalContentUrl': image,
+    //             'previewImageUrl': image,
                 
-            }
-        }
-    }
+    //         }
+    //     }
+    // }
     return client.replyMessage(event.replyToken, msg);
 }
 
