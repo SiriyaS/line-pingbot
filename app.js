@@ -98,6 +98,12 @@ function handleMessageEvent(event) {
                     }
                 };
             }
+            else{
+                var msg = {
+                    type: 'text',
+                    text: 'Interact with nbot type "nbot hi" for adding event type "nbot event:<eventName>"'
+                }; 
+            }
         }
     }
 
