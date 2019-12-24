@@ -49,16 +49,16 @@ function handleMessageEvent(event) {
     var trimed = eventText.trim();
 
     if(trimed === 'nbot'){
-        var msg = {
-            type: 'text',
-            text: 'Interact with nbot type "nbot hi" for adding event type "nbot event:<eventName>"'
-        };
+        
     }
     
     var splited = trimed.split(" ");
     console.log(splited);
     if(splited[0] === 'nbot'){
-        
+        var msg = {
+            type: 'text',
+            text: 'Interact with nbot type "nbot hi" for adding event type "nbot event:<eventName>"'
+        };
         if(splited[1] === 'hi'){
             var msg = {
                 type: 'text',
