@@ -46,58 +46,62 @@ function handleMessageEvent(event) {
     
     var eventText = event.message.text.toLowerCase();
     
-    if(eventText === 'nbot'){
-       var msg = {
-                type: 'text',
-                text: 'Interact with nbot type "nbot hi" for adding event type "nbot event:<eventName>"'
-            }; 
-    }
-    
     var trimed = eventText.trim();
-    var splited = trimed.split(" ");
-    console.log(splited);
-    if(splited[0] === 'nbot'){
-        
-        if(splited[1] === 'hi'){
-            var msg = {
-                type: 'text',
-                text: 'Hi !'
-            };
-        }
-        else if(splited[1] === ''){
-            if(splited[2] === 'hi'){
+
+    if(trimed === 'nbot'){
+        var msg = {
+            type: 'text',
+            text: 'Interact with nbot type "nbot hi" for adding event type "nbot event:<eventName>"'
+        }; 
+    }
+    else{
+        var splited = trimed.split(" ");
+        console.log(splited);
+        if(splited[0] === 'nbot'){
+            
+            if(splited[1] === 'hi'){
                 var msg = {
                     type: 'text',
                     text: 'Hi !'
                 };
             }
-        }
-        else if(splited[1].includes('event:')){
-            var eventName = splited[1].slice(6);
-            var select = `Please select date and time for ${eventName}`;  // `gfd ${gmh}gfd`
-            var msg = {
-                type: 'text',
-                text: select,
-                quickReply: {
-                    items: [
-                        {
-                        "type": "action",
-                        "imageUrl": "https://icla.org/wp-content/uploads/2018/02/blue-calendar-icon.png",
-                        "action": {
-                            "type": "datetimepicker",
-                            "label": "Datetime Picker",
-                            "data": "storeId=12345",
-                            "mode": "datetime",
-                            "initial": "2019-12-21t00:00",
-                            "max": "2020-04-30t23:59",
-                            "min": "2019-12-20t00:00"
-                        }
-                        }
-                    ]
+            else if(splited[1] === ''){
+                if(splited[2] === 'hi'){
+                    var msg = {
+                        type: 'text',
+                        text: 'Hi !'
+                    };
                 }
-            };
+            }
+            else if(splited[1].includes('event:')){
+                var eventName = splited[1].slice(6);
+                var select = `Please select date and time for ${eventName}`;  // `gfd ${gmh}gfd`
+                var msg = {
+                    type: 'text',
+                    text: select,
+                    quickReply: {
+                        items: [
+                            {
+                            "type": "action",
+                            "imageUrl": "https://icla.org/wp-content/uploads/2018/02/blue-calendar-icon.png",
+                            "action": {
+                                "type": "datetimepicker",
+                                "label": "Datetime Picker",
+                                "data": "storeId=12345",
+                                "mode": "datetime",
+                                "initial": "2019-12-21t00:00",
+                                "max": "2020-04-30t23:59",
+                                "min": "2019-12-20t00:00"
+                            }
+                            }
+                        ]
+                    }
+                };
+            }
         }
     }
+
+    
     // else{
     //     if(eventText === 'quick reply'){
     //         var msg = {
