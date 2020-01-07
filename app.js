@@ -99,16 +99,17 @@ function handleMessageEvent(event) {
                 };
             }
             else if(splited === 'ออกไป'){
+                console.log(event.source)
                 console.log(event.source.groupId)
-                client.leaveGroup(event.source.groupId)
-                .then(() => {
-                    // return status 200 and empty json 
-                    res.status(200).json({});
-                })
-                .catch((err) => {
-                    // error handling
-                    console.log(err)
-                });
+                // client.leaveGroup(event.source.groupId)
+                // .then(() => {
+                //     // return status 200 and empty json 
+                //     res.status(200).json({});
+                // })
+                // .catch((err) => {
+                //     // error handling
+                //     console.log(err)
+                // });
             }
             else{
                 var msg = {
