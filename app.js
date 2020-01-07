@@ -98,7 +98,7 @@ function handleMessageEvent(event) {
                     }
                 };
             }
-            else if(splited === 'ออกไป'){
+            else if(splited === 'getout'){
                 console.log(event.source)
                 console.log(event.source.groupId)
                 // client.leaveGroup(event.source.groupId)
