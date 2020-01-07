@@ -99,6 +99,7 @@ function handleMessageEvent(event) {
                 };
             }
             else if(splited === 'ออกไป'){
+                console.log(event.source.groupId)
                 client.leaveGroup(event.source.groupId)
                 .then(() => {
                     // return status 200 and empty json 
