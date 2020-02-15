@@ -6,7 +6,6 @@ const secretToken =  "cd1d98e643ce2194b31acbfecb286213"
 // Import Library
 const express = require('express');
 const line = require('@line/bot-sdk');
-// const quickReply = require('./quickreply');
 
 require('dotenv').config();
 
@@ -27,6 +26,7 @@ app.post('/webhook', line.middleware(config), (req, res) => {
         .then((result) => res.json(result));
 });
 
+// test
 app.get('/ping', function (req,res){
     console.log('ping-pong1');
     res.send('ping-pong1');
@@ -44,9 +44,10 @@ function handleEvent(event) {
 
 function handleMessageEvent(event) {
     
+    // make message to lowercase
     var eventText = event.message.text.toLowerCase();
     
-    var trimed = eventText.trim();
+    var trimed = eventText.trim(); //trim the space of the message
 
     if(trimed === 'nbot'){
         var msg = {
@@ -55,6 +56,7 @@ function handleMessageEvent(event) {
         }; 
     }
     else{
+        // split word by " "
         var splited = trimed.split(" ");
         console.log(splited);
         if(splited[0] === 'nbot'){
@@ -65,6 +67,7 @@ function handleMessageEvent(event) {
                     text: 'Hi !'
                 };
             }
+            // check if there are 2 spaces between 'nbot  hi'
             else if(splited[1] === ''){
                 if(splited[2] === 'hi'){
                     var msg = {
@@ -73,8 +76,9 @@ function handleMessageEvent(event) {
                     };
                 }
             }
+            // for 'nbot event:<eventName>'
             else if(splited[1].includes('event:')){
-                var eventName = splited[1].slice(6);
+                var eventName = splited[1].slice(6); // slice splited[1] to get only eventName
                 var select = `Please select date and time for ${eventName}`;  // `gfd ${gmh}gfd`
                 var msg = {
                     type: 'text',
@@ -98,6 +102,72 @@ function handleMessageEvent(event) {
                     }
                 };
             }
+            // for 'nbot quick reply'
+            else if(splited[1] === 'quick'){
+                if(splited[2] === 'reply'){
+                    var msg = {
+                        "type": "text",
+                        "text": "Hello Quick Reply!",
+                        "quickReply": {
+                        "items": [
+                            {
+                            "type": "action",
+                            "action": {
+                                "type": "cameraRoll",
+                                "label": "Camera Roll"
+                            }
+                            },
+                            {
+                            "type": "action",
+                            "action": {
+                                "type": "camera",
+                                "label": "Camera"
+                            }
+                            },
+                            {
+                            "type": "action",
+                            "action": {
+                                "type": "location",
+                                "label": "Location"
+                            }
+                            },
+                            {
+                            "type": "action",
+                            "imageUrl": "https://cdn1.iconfinder.com/data/icons/mix-color-3/502/Untitled-1-512.png",
+                            "action": {
+                                "type": "message",
+                                "label": "Message",
+                                "text": "Hello World!"
+                            }
+                            },
+                            {
+                            "type": "action",
+                            "action": {
+                                "type": "postback",
+                                "label": "Postback",
+                                "data": "action=buy&itemid=123",
+                                "displayText": "Buy"
+                            }
+                            },
+                            {
+                            "type": "action",
+                            "imageUrl": "https://icla.org/wp-content/uploads/2018/02/blue-calendar-icon.png",
+                            "action": {
+                                "type": "datetimepicker",
+                                "label": "Datetime Picker",
+                                "data": "storeId=12345",
+                                "mode": "datetime",
+                                "initial": "2018-08-10t00:00",
+                                "max": "2018-12-31t23:59",
+                                "min": "2018-08-01t00:00"
+                            }
+                            }
+                        ]
+                        }
+                    };
+                }
+            }
+            // for 'nbot ออกไป' nbot will leave the group chat
             else if(splited[1] === 'ออกไป'){
                 // console.log(event.source)
                 console.log(event.source.groupId)
@@ -111,6 +181,7 @@ function handleMessageEvent(event) {
                     console.log(err)
                 });
             }
+            // for 'nbot ...'
             else{
                 var msg = {
                     type: 'text',
