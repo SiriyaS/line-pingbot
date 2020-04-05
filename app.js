@@ -184,6 +184,7 @@ function handleMessageEvent(event) {
             }
             // for nbot covid
             else if(splited[1] === 'covid'){
+                var msg;
                 https.get('https://covid19.th-stat.com/api/open/today', res => {
                     res.setEncoding("utf8");
                     let body = "";
@@ -193,6 +194,10 @@ function handleMessageEvent(event) {
                     res.on("end", () => {
                       body = JSON.parse(body);
                       console.log(body);
+                      msg = {
+                        type: 'text',
+                        text: `ยืนยันยอดผู้ป่วย COVID-19 ในไทย \nอัพเดตล่าสุดเมื่อ ${body.UpdateDate} \nยอดผู้ติดเชื้อสะสม ${body.Confirmed} คน (🔺${body.NewConfirmed}) \nรักษาหาย ${body.Recovered} คน (🔺${body.NewRecovered}) \nกำลังรักษา ${body.Hospitalized} คน (🔺${body.NewHospitalized}) \nเสียชีวิต ${body.Deaths} คน (🔺${body.NewDeaths}) \n \nที่มา : ${body.Source} `
+                        };
                     });
                 });
             }
