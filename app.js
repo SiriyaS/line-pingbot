@@ -184,6 +184,7 @@ function handleMessageEvent(event) {
             }
             // for nbot covid
             else if(splited[1] === 'covid'){
+                // get http requests https://www.valentinog.com/blog/http-js/
                 https.get('https://covid19.th-stat.com/api/open/today', res => {
                     res.setEncoding("utf8");
                     let body = "";
