@@ -6,6 +6,7 @@ const secretToken =  "cd1d98e643ce2194b31acbfecb286213"
 // Import Library
 const express = require('express');
 const line = require('@line/bot-sdk');
+const https = require("https");
 
 require('dotenv').config();
 
@@ -179,6 +180,20 @@ function handleMessageEvent(event) {
                 .catch((err) => {
                     // error handling
                     console.log(err)
+                });
+            }
+            // for nbot covid
+            else if(splited[1] === 'covid'){
+                https.get('https://covid19.th-stat.com/api/open/today', res => {
+                    res.setEncoding("utf8");
+                    let body = "";
+                    res.on("data", data => {
+                      body += data;
+                    });
+                    res.on("end", () => {
+                      body = JSON.parse(body);
+                      console.log(body);
+                    });
                 });
             }
             // for 'nbot ...'
