@@ -103,41 +103,109 @@ function handleMessageEvent(event) {
                     }
                 };
             }
-            // for 'nbot button'
-            else if(splited[1] === 'button'){
+            // for 'nbot working'
+            else if(splited[1] === 'working'){
                 var msg = {
-                    "type": "template",
-                    "altText": "This is a buttons template",
-                    "template": {
-                        "type": "buttons",
-                        "thumbnailImageUrl": "https://example.com/bot/images/image.jpg",
-                        "imageAspectRatio": "rectangle",
-                        "imageSize": "cover",
-                        "imageBackgroundColor": "#FFFFFF",
-                        "title": "Menu",
-                        "text": "Please select",
-                        "defaultAction": {
-                            "type": "uri",
-                            "label": "View detail",
-                            "uri": "http://example.com/page/123"
+                    "type": "flex",
+                    "altText": "this is a flex message",
+                    "contents": {
+                        "type": "bubble",
+                        "header": {
+                            "type": "text",
+                            "text": "Where do you work today?",
+                            "weight": "bold"
                         },
-                        "actions": [
-                            {
-                                "type": "postback",
-                                "label": "Buy",
-                                "data": "action=buy&itemid=123"
-                            },
-                            {
-                                "type": "postback",
-                                "label": "Add to cart",
-                                "data": "action=add&itemid=123"
-                            },
-                            {
-                                "type": "uri",
-                                "label": "View detail",
-                                "uri": "http://example.com/page/123"
-                            }
-                        ]
+                        "body": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "spacing": "md",
+                            "contents": [
+                                // แนวนอน แถว 1
+                                {
+                                    "type": "box",
+                                    "layout": "horizontal",
+                                    "spacing": "md",
+                                    "contents": [
+                                        {
+                                            // "type": "text",
+                                            // "text": "Home"
+                                            "type": "button",
+                                            "style": "link",
+                                            "action": {
+                                                "type":"message",
+                                                "label":"Home",
+                                                "text":"Home"
+                                            }
+                                        },
+                                        {
+                                            "type": "separator"   // เส้นกั้นแนวตั้ง
+                                        },
+                                        {
+                                            "type": "button",
+                                            "style": "link",
+                                            "action": {
+                                                "type":"message",
+                                                "label":"Office",
+                                                "text":"Office"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "separator"  // เส้นกั้นแนวนอน
+                                },
+                                // แนวนอน แถว 2
+                                {
+                                    "type": "box",
+                                    "layout": "horizontal",
+                                    "spacing": "md",
+                                    "contents": [
+                                        {
+                                            "type": "button",
+                                            "style": "link",
+                                            "action": {
+                                                "type":"message",
+                                                "label":"Client's Office",
+                                                "text":"Client's Office"
+                                            }
+                                        },
+                                        {
+                                            "type": "separator"
+                                        },
+                                        {
+                                            "type": "button",
+                                            "style": "link",
+                                            "action": {
+                                                "type":"message",
+                                                "label":"Absent",
+                                                "text":"Absent"
+                                            }
+                                        }
+                                    ]
+                                },
+                                // {
+                                //     "type": "separator"
+                                // },
+                                // {
+                                //     "type": "box",
+                                //     "layout": "horizontal",
+                                //     "spacing": "md",
+                                //     "contents": [
+                                //         {
+                                //             "type": "text",
+                                //             "text": "grape"
+                                //         },
+                                //         {
+                                //             "type": "separator"
+                                //         },
+                                //         {
+                                //             "type": "text",
+                                //             "text": "lemon"
+                                //         }
+                                //     ]
+                                // }
+                            ]
+                        }
                     }
                 };
             }
