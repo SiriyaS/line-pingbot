@@ -184,7 +184,7 @@ function handleMessageEvent(event) {
                                             }
                                         },
                                         {
-                                            "type": "separator"
+                                            "type": "separator"   // เส้นกั้นแนวตั้ง
                                         },
                                         {
                                             "type": "button",
