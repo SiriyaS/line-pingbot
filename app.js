@@ -110,11 +110,11 @@ function handleMessageEvent(event) {
                     "altText": "this is a flex message",
                     "contents": {
                         "type": "bubble",
-                        "header": {
-                            "type": "text",
-                            "text": "Where do you work today?",
-                            "weight": "bold"
-                        },
+                        // "header": {
+                        //     "type": "text",
+                        //     "text": "Where do you work today?",
+                        //     "weight": "bold"
+                        // },
                         "body": {
                             "type": "box",
                             "layout": "vertical",
