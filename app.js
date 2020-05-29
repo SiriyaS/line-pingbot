@@ -127,7 +127,7 @@ function handleMessageEvent(event) {
                             "type": "image",
                             "url": "https://www.romania-insider.com/sites/default/files/styles/article_large_image/public/2020-04/remote_working_laptop_-_photo_pattanaphong_khuankaew_-_dreamstime.com_.jpg",
                             "size": "full",
-                            "aspectRatio": "2:1"
+                            // "aspectRatio": "2:1"
                         },
                         "body": {
                             "type": "box",
