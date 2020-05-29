@@ -117,9 +117,17 @@ function handleMessageEvent(event) {
                                 {
                                     "type": "text",
                                     "text": "Where do you work today?",
-                                    "weight": "bold"
+                                    "weight": "bold",
+                                    "size": "lg",
+                                    "align": "center"
                                 }
                             ]
+                        },
+                        "hero": {
+                            "type": "image",
+                            "url": "https://www.romania-insider.com/sites/default/files/styles/article_large_image/public/2020-04/remote_working_laptop_-_photo_pattanaphong_khuankaew_-_dreamstime.com_.jpg",
+                            "size": "full",
+                            "aspectRatio": "2:1"
                         },
                         "body": {
                             "type": "box",
