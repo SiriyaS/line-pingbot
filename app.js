@@ -44,6 +44,8 @@ function handleEvent(event) {
 }
 
 function handleMessageEvent(event) {
+
+    console.log(event.source.userId)
     
     // make message to lowercase
     var eventText = event.message.text.toLowerCase();
